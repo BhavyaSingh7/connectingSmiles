@@ -1,0 +1,42 @@
+/* Apply Inter to the full header */
+.navbar,
+.navbar-brand,
+.nav-link,
+button {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Optionally use cursive for branding */
+.navbar-brand {
+  font-family: 'Edu NSW ACT Cursive', cursive;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.navbar-brand {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar {
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
+  height: 15vh;
+}
+
+.nav-link {
+  color: #333 !important;
+}
+
+.nav-link:hover {
+  color: #000 !important;
+  text-decoration: underline;
+}
+
+button.btn-dark {
+  border-radius: 0.5rem;
+  font-weight: 600;
+}

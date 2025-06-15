@@ -1,0 +1,13 @@
+.initiative-img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.initiative-card {
+  transition: transform 0.3s ease;
+}
+
+.initiative-card:hover {
+  transform: translateY(-5px);
+}
