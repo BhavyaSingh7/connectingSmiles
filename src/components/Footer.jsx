@@ -1,14 +1,15 @@
 import React from 'react';
 import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa';
+import "./css/Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="border-top pt-5 pb-4 bg-white px-4 px-md-5">
+    <footer className="border-top pt-5 pb-4 px-4 px-md-5 footer-design">
       <div className="container">
         <div className="row">
           {/* Left Column */}
           <div className="col-md-3 mb-4">
-            <h4 className="fw-bold">Site name</h4>
+            <h4 className="fw-bold">CONNECTING SMILES</h4>
             <div className="d-flex gap-3 mt-4">
               <a href="#"><FaFacebookF className="text-secondary fs-5" /></a>
               <a href="#"><FaLinkedinIn className="text-secondary fs-5" /></a>

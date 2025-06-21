@@ -1,50 +1,44 @@
 import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import "./css/ContactUs.css";
 
 const ContactUs = () => {
   return (
-    <Container className="py-5 mt-5 contact-container">
-      <Row className="align-items-center">
-        <Col md={6} sm={12}>
-          <h2 className="fw-bold">CONTACT US</h2>
-          <p className="mb-4 subheading">Subheading</p>
-          <Form className="p-4 shadow-sm rounded bg-light">
-            <Form.Group className="mb-3" controlId="formName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Value" />
-            </Form.Group>
+    <div className="contact-us-wrapper">
+      <div className="contact-us-bg">
+        <h2 className="text-center text-white fw-bold pt-5">CONTACT US</h2>
+        <p className="text-center text-white subheading">
+        </p>
+      </div>
 
-            <Form.Group className="mb-3" controlId="formSurname">
-              <Form.Label>Surname</Form.Label>
-              <Form.Control type="text" placeholder="Value" />
-            </Form.Group>
+      <Container className="form-section">
+        <Form className="contact-form p-4 shadow-lg rounded-4 bg-white">
+          <Form.Group className="mb-3" controlId="formName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control type="text" placeholder="Enter your name" />
+          </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Value" />
-            </Form.Group>
+          <Form.Group className="mb-3" controlId="formSurname">
+            <Form.Label>Surname</Form.Label>
+            <Form.Control type="text" placeholder="Enter your surname" />
+          </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formMessage">
-              <Form.Label>Message</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Value" />
-            </Form.Group>
+          <Form.Group className="mb-3" controlId="formEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Enter your email" />
+          </Form.Group>
 
-            <Button variant="dark" type="submit" className="w-100">
-              Submit
-            </Button>
-          </Form>
-        </Col>
+          <Form.Group className="mb-4" controlId="formMessage">
+            <Form.Label>Message</Form.Label>
+            <Form.Control as="textarea" rows={4} placeholder="Write your message..." />
+          </Form.Group>
 
-        <Col md={6} sm={12} className="mt-4 mt-md-0 text-center">
-          <img
-            src="/contact-img.jpg"
-            alt="Contact Visual"
-            className="img-fluid rounded"
-          />
-        </Col>
-      </Row>
-    </Container>
+          <Button variant="danger" type="submit" className="w-100 fw-semibold">
+            Send Message
+          </Button>
+        </Form>
+      </Container>
+    </div>
   );
 };
 

@@ -1,10 +1,9 @@
-/* Global body padding fix for fixed navbar */
 body {
   padding-top: 70px;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Carousel Container */
+/* Carousel Styles */
 .donate-carousel {
   width: 100%;
   margin: 0 auto;
@@ -12,68 +11,51 @@ body {
   overflow: hidden;
 }
 
-/* Carousel Images */
 .carousel-img {
   width: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
 }
 
 @media (max-width: 576px) {
-  .carousel-img { height: 320px; }
+  .carousel-img {
+    height: 320px;
+  }
 }
 @media (min-width: 577px) and (max-width: 768px) {
-  .carousel-img { height: 400px; }
+  .carousel-img {
+    height: 400px;
+  }
 }
 @media (min-width: 769px) and (max-width: 992px) {
-  .carousel-img { height: 550px; }
+  .carousel-img {
+    height: 550px;
+  }
 }
 @media (min-width: 993px) {
-  .carousel-img { height: 750px; }
+  .carousel-img {
+    height: 750px;
+  }
 }
 
-/* Carousel Caption Box */
+/* Caption Box */
 .carousel-caption-custom {
-  background-color: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.65);
   padding: 1.2rem 1.5rem;
   border-radius: 14px;
   max-width: 90%;
   margin: 0 auto;
-  animation: fadeUp 1s ease-in-out;
   position: relative;
   z-index: 2;
-  overflow: hidden;
 }
 
-/* Fallback scroll behavior for small screens */
-@media (max-width: 768px) {
-  .carousel-caption-custom {
-    max-height: 180px;
-    overflow-y: auto;
-  }
-
-  .carousel-caption-custom::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 30px;
-    width: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-    pointer-events: none;
-  }
-}
-
-/* Caption Headline */
-.carousel-caption-custom h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
+.carousel-caption-custom h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
   color: #fff;
-  margin-bottom: 0.6rem;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 3px #000;
 }
 
-/* Caption Paragraph */
 .carousel-caption-custom p {
   font-size: 1rem;
   color: #eee;
@@ -82,9 +64,9 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Learn More Button */
-.carousel-caption-custom .btn-light {
-  background-color: #f7c948; /* Yellow from logo */
+.learn-more-button {
+  background-color: #f7c948;
+  color: #111;
   padding: 0.7rem 1.6rem;
   font-weight: 600;
   font-size: 1rem;
@@ -92,44 +74,76 @@ body {
   transition: all 0.3s ease;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
   border: none;
-  color: #111;
 }
-.carousel-caption-custom .btn-light:hover {
+.learn-more-button:hover {
   transform: translateY(-3px) scale(1.03);
   background-color: #f0b429;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Call to Action Section */
+/* Call-to-Action Section */
 .cta-section {
-  padding: 3rem 1rem 4rem;
-  text-align: center;
+  width: 100%;
+  padding: 6rem 1rem 6rem; /* increased top padding */
   background-color: #f9f9f9;
+  text-align: center;
+  margin-top: 4rem; /* added extra margin for separation */
+  background: #FFBF00;
 }
 
 .cta-section h3 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #222;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
 }
 
-/* CTA Button */
 .cta-button {
-  background-color: #D62828; /* Red from logo */
+  background-color: #D62828;
   color: #fff;
-  padding: 1.4rem 3rem;
-  font-size: 1.4rem;
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
   border: none;
   min-height: 3.5rem;
 }
-
 .cta-button:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   background-color: #b71c1c;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cta-section p {
+  margin-top: 25px;
+  font-size: 1.05rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Wavy Section Edges */
+.wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.wave-top {
+  margin-top: -5px;
+}
+
+.wave-bottom {
+  margin-bottom: -5px;
 }

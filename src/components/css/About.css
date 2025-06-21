@@ -1,0 +1,118 @@
+:root {
+  --primary-red: #D62828;
+  --accent-yellow: #FFBF00;
+  --text-dark: #222;
+  --bg-light: #f9f9f9;
+  --section-gap: 4rem;
+}
+
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+}
+
+.hero-section {
+  background: var(--accent-yellow);
+  text-align: center;
+  padding: var(--section-gap) 1rem;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.mission-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: var(--section-gap) 1rem;
+  background: white;
+}
+.mission-section .text-block,
+.mission-section .img-block {
+  flex: 1;
+}
+.mission-section img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 400px;
+}
+.mission-section .text-block h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.mission-section .text-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Stack on mobile */
+@media (max-width: 768px) {
+  .mission-section {
+    flex-direction: column;
+  }
+}
+
+.team-section {
+  padding: var(--section-gap) 1rem;
+  background: var(--bg-light);
+  text-align: center;
+}
+.team-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 2rem;
+}
+.team-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.team-card img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 180px;
+}
+.team-card h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.team-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.about-cta {
+  padding: var(--section-gap) 1rem;
+  background: white;
+  text-align: center;
+}
+.about-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.cta-btn {
+  background: var(--primary-red);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+}
+.cta-btn:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}

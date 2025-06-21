@@ -1,8 +1,53 @@
-.subheading {
-  font-size: 1.2rem;
-  color: #555;
+.contact-us-wrapper {
+  margin-top: 80px;
 }
 
-.contact-container {
-  margin-top: 100px; /* or more */
+/* Top Red Background */
+.contact-us-bg {
+  height: 25vh;
+  background-color: #dc3545; /* Bootstrap red */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Subtitle under heading */
+.subheading {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+/* Container holding the form */
+.form-section {
+  background-color: #fff;
+  margin-top: -80px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+/* Stylish Form */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.contact-form .form-control {
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+.contact-form .form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-form button {
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
 }

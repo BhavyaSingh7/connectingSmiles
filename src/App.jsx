@@ -1,23 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import Header from "./components/Header"
-import DonateSection from "./components/DonateSection"
-import Initiatives from "./components/Initiatives"
-import ContactUs from "./components/ContactUs"
-import Footer from "./components/Footer"
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import './App.css';
+import About from "./components/About";
+import Home from "./components/Home"; // You'll create this now
 
-
-function App() {
-
+const App = () => {
   return (
-    <div>
-      <Header />
-      <DonateSection />
-      <Initiatives />
-      <ContactUs />
-      <Footer />
-    </div>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />       {/* Home page */}
+        <Route path="/about" element={<About />} /> {/* About page */}
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

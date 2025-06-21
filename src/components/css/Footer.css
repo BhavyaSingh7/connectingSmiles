@@ -1,0 +1,28 @@
+/* Footer Background and Styling */
+.footer-design {
+  background-color: white; /* Golden yellow */
+  color: #333;
+}
+
+.footer-design h4,
+.footer-design h6 {
+  color: #000; /* Ensure headings are readable */
+}
+
+.footer-design a {
+  color: #222;
+}
+
+.footer-design a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* Optional: Style icons to match darker theme */
+.footer-design .text-secondary {
+  color: #444 !important;
+}
+
+.footer-design .text-secondary:hover {
+  color: #000 !important;
+}
