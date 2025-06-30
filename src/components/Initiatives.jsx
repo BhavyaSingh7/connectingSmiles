@@ -14,9 +14,9 @@ const initiativesData = [
     image: "./cs-2b.jpeg"
   },
   {
-    title: "Heading-3",
-    description: "Description",
-    image: "/img3.jpg"
+    title: "Each One Feed One",
+    description: "Each One Feed One is our initiative to ensure no one goes hungry by providing meals to those in need.",
+    image: "./cs-3c.jpeg"
   }
 ];
 

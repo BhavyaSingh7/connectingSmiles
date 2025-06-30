@@ -29,9 +29,7 @@ const About = () => (
           through access to education, skill training, and health services.
         </p>
       </div>
-{/*       <div className="img-block"> */}
-{/*         <img src={missionImg} alt="Our Mission" /> */}
-{/*       </div> */}
+
     </section>
 
     {/* Team */}

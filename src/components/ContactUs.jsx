@@ -6,7 +6,7 @@ const ContactUs = () => {
   return (
     <div className="contact-us-wrapper">
       <div className="contact-us-bg">
-        <h2 className="text-center text-white fw-bold pt-5">CONTACT US</h2>
+        <h2 className="text-center text-white fw-bold pt-5">JOIN US TO MAKE THE CHANGE</h2>
         <p className="text-center text-white subheading">
         </p>
       </div>
