@@ -20,7 +20,7 @@ body {
 }
 
 
-@@media (max-width: 768px) {
+@media (max-width: 768px) {
    .carousel-img {
      max-height: 400px;
    }
