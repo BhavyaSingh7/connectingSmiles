@@ -53,32 +53,26 @@ const DonateSection = () => {
   return (
     <>
        <Carousel fade interval={6000} className="donate-carousel">
-              {carouselImages.map((item, index) => (
-                <Carousel.Item key={index}>
-                  <div className="carousel-image-wrapper">
-                    <Carousel controls={true} indicators={true} interval={3000}>
-                      {item.images.map((img, idx) => (
-                        <Carousel.Item key={idx}>
-                          <img
-                            className="d-block w-100 carousel-img"
-                            src={img}
-                            alt={`${item.alt} ${idx + 1}`}
-                          />
-                        </Carousel.Item>
-                      ))}
-                    </Carousel>
-                  </div>
+         {carouselImages.map((item, index) => (
+           <Carousel.Item key={index}>
+             <div className="carousel-image-wrapper">
+               <img
+                 className="d-block w-100 carousel-img"
+                 src={item.images[0]} // Just show first image, or implement a custom slider later
+                 alt={item.alt}
+               />
+             </div>
 
-                  <Carousel.Caption className="carousel-caption-custom animate__animated animate__fadeInUp">
-                    <h3>{item.caption}</h3>
-                    <p>{item.description}</p>
-                    <Button variant="light" className="learn-more-button">
-                      Learn More
-                    </Button>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              ))}
-            </Carousel>
+             <Carousel.Caption className="carousel-caption-custom animate__animated animate__fadeInUp">
+               <h3>{item.caption}</h3>
+               <p>{item.description}</p>
+               <Button variant="light" className="learn-more-button">
+                 Learn More
+               </Button>
+             </Carousel.Caption>
+           </Carousel.Item>
+         ))}
+       </Carousel>
 
       {/* Full-width animated CTA section */}
       {/* Wavy Top */}
