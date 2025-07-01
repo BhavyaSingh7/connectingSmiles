@@ -29,27 +29,6 @@ const carouselImages = [
 
 const DonateSection = () => {
 
-   const handleDonateClick = () => {
-     const container = document.getElementById("dmScriptContainer");
-     if (!container) {
-       return alert("Donation portal is not available right now.");
-     }
-
-     // Prevent duplicate iframes
-     if (!container.querySelector("iframe")) {
-       const iframe = document.createElement("iframe");
-       iframe.src = `https://danamojo.org/dm/dmWidget.jsp?ngoId=982`;
-       iframe.style.width = "100%";
-       iframe.style.height = "700px";
-       iframe.frameBorder = "0";
-       iframe.scrolling = "no";
-       container.appendChild(iframe);
-     }
-     container.style.display = "block";
-     container.scrollIntoView({ behavior: "smooth" });
-   };
-
-
   return (
     <>
        <Carousel fade interval={6000} className="donate-carousel">
@@ -97,17 +76,15 @@ const DonateSection = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
           onClick={() => {
-            const popupUrl = "https://danamojo.org/dm/dmWidget.jsp?ngo_id=982";
             window.open(
-              popupUrl,
+              "https://connecting-smiles-foundation.danamojo.org/",
               "_blank",
-              "noopener,noreferrer,width=500,height=700"
+              "noopener,noreferrer"
             );
           }}
         >
           DONATE FOR THE CAUSE
         </motion.button>
-
 
         <p className="mt-4 fs-6 text-muted">
           Every contribution helps us bring a smile and hope to those in need.

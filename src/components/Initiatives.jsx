@@ -6,17 +6,17 @@ const initiativesData = [
   {
     title: "Pehel",
     description: "Pehel, a flagship prgram of Connecting Smiles Foundation (CSF), empowers women.",
-    image: "./cs-1.jpeg"
+    image: "/connectingSmiles/cs-1.jpeg"
   },
   {
     title: "Neev",
     description: "Neev empowers small orphanages through nutrition, education, and a path to sustainability.",
-    image: "./cs-2b.jpeg"
+    image: "/connectingSmiles/cs-2b.jpeg"
   },
   {
     title: "Each One Feed One",
     description: "Each One Feed One is our initiative to ensure no one goes hungry by providing meals to those in need.",
-    image: "./cs-3c.jpeg"
+    image: "/connectingSmiles/cs-3c.jpeg"
   }
 ];
 

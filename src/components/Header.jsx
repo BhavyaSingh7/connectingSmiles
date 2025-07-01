@@ -28,13 +28,11 @@ const Header = () => {
               variant="dark"
               className="text-uppercase px-4 py-2"
               onClick={() => {
-                if (window.dmWidget) {
-                  window.dmWidget.openWidget({
-                    ngo_id: "connecting-smiles" // 🔁 Put your actual NGO ID here
-                  });
-                } else {
-                  alert("Donation portal is currently unavailable. Please try again later.");
-                }
+                 window.open(
+                    "https://connecting-smiles-foundation.danamojo.org/",
+                    "_blank",
+                    "noopener,noreferrer"
+                 );
               }}
             >
               Donate
