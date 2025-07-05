@@ -1,43 +1,32 @@
 import React from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./css/ContactUs.css";
 
 const ContactUs = () => {
   return (
-    <div className="contact-us-wrapper">
-      <div className="contact-us-bg">
-        <h2 className="text-center text-white fw-bold pt-5">JOIN US TO MAKE THE CHANGE</h2>
-        <p className="text-center text-white subheading">
-        </p>
+    <div className="contact-wrapper">
+      <div className="contact-container">
+        <div className="contact-card">
+          <h4>Contact Us</h4>
+          <div className="contact-info">
+            <p><FaMapMarkerAlt className="icon" /> KR Puram <br /> Koramangla </p>
+            <p><FaEnvelope className="icon" /> info@connectingsmilesfoundation.org </p>
+            <p><FaPhoneAlt className="icon" /> +91 72047 40835</p>
+          </div>
+        </div>
+
+        <div className="contact-form-panel">
+          <h3>JOIN US TO MAKE THE CHANGE</h3>
+          <p className="sub-text">Feel free to drop us a line below!</p>
+          <Form className="contact-form">
+            <Form.Control type="text" placeholder="Your Name" className="mb-3" />
+            <Form.Control type="email" placeholder="Your Email" className="mb-3" />
+            <Form.Control as="textarea" rows={4} placeholder="Typing your message here……" className="mb-4" />
+            <Button variant="danger" type="submit" className="send-btn">Send</Button>
+          </Form>
+        </div>
       </div>
-
-      <Container className="form-section">
-        <Form className="contact-form p-4 shadow-lg rounded-4 bg-white">
-          <Form.Group className="mb-3" controlId="formName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter your name" />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formSurname">
-            <Form.Label>Surname</Form.Label>
-            <Form.Control type="text" placeholder="Enter your surname" />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter your email" />
-          </Form.Group>
-
-          <Form.Group className="mb-4" controlId="formMessage">
-            <Form.Label>Message</Form.Label>
-            <Form.Control as="textarea" rows={4} placeholder="Write your message..." />
-          </Form.Group>
-
-          <Button variant="danger" type="submit" className="w-100 fw-semibold">
-            Send Message
-          </Button>
-        </Form>
-      </Container>
     </div>
   );
 };

@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Button, Carousel } from "react-bootstrap";
-import { motion } from "framer-motion"; // Import motion
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./css/DonateSection.css";
 
 const carouselImages = [
   {
-    images: ["./cs-1.jpeg", "./cs-1b.jpeg"], // store in public/
+    images: ["./cs-1.jpeg", "./cs-1b.jpeg"],
     alt: "Pehel",
     caption: "Pehel – Give wings to your dreams",
     description:
@@ -29,17 +30,24 @@ const carouselImages = [
 
 const DonateSection = () => {
 
+  const navigate = useNavigate();
   return (
     <>
        <Carousel fade interval={6000} className="donate-carousel">
          {carouselImages.map((item, index) => (
            <Carousel.Item key={index}>
              <div className="carousel-image-wrapper">
-               <img
-                 className="d-block w-100 carousel-img"
-                 src={item.images[0]} // Just show first image, or implement a custom slider later
-                 alt={item.alt}
-               />
+               <Carousel controls={false} indicators={false} interval={4000}>
+                 {item.images.map((img, idx) => (
+                   <Carousel.Item key={idx}>
+                     <img
+                       className="d-block w-100 carousel-img"
+                       src={img}
+                       alt={`${item.alt} ${idx + 1}`}
+                     />
+                   </Carousel.Item>
+                 ))}
+               </Carousel>
              </div>
 
              <Carousel.Caption className="carousel-caption-custom animate__animated animate__fadeInUp">
@@ -53,7 +61,6 @@ const DonateSection = () => {
          ))}
        </Carousel>
 
-      {/* Full-width animated CTA section */}
       {/* Wavy Top */}
       <div className="wave wave-top">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -75,14 +82,13 @@ const DonateSection = () => {
           className="cta-button"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
-          onClick={() => {
-            window.open(
-              "https://connecting-smiles-foundation.danamojo.org/",
-              "_blank",
-              "noopener,noreferrer"
-            );
-          }}
-        >
+           onClick={() => {
+                 window.open(
+                    "https://connecting-smiles-foundation.danamojo.org/",
+                    "_blank",
+                    "noopener,noreferrer"
+                 );
+              }}        >
           DONATE FOR THE CAUSE
         </motion.button>
 
