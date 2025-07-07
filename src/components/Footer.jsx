@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
 import './css/Footer.css';
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-container container">
         {/* Left section */}
         <div className="footer-left">
-          <h4 className="footer-brand">CONNECTING SMILES</h4>
+          <h4 className="footer-brand">CONNECTING SMILES FOUNDATION</h4>
           <p className="footer-tagline">
             Empowering communities through education, healthcare and compassion.
           </p>
@@ -33,22 +33,34 @@ const Footer = () => {
         </div>
 
         <div className="footer-links">
-          <h6>Our Locations</h6>
-             <ul>
-                <li>
-                <strong>KR Puram</strong><br />
+          <h6 className="footer-location">Our Locations</h6>
+          <div className="location-flex">
+            <div className="location-item">
+              <div className="location-header">
+                <FaMapMarkerAlt className="location-icon" />
+                <strong>KR Puram</strong>
+              </div>
+              <p>
                 #353, 2nd Cross, Kuvempu Nagar,<br />
-                              Ramamurthy Nagar,<br />
-                              Bangalore – 560016
-                </li>
-                 <li>
-                 <strong>Koramangala</strong><br />
-                 #204, 9th Main, 14th Cross,<br />
-                               Rajendranagar, Vivek Nagar,<br />
-                               Bangalore – 560047
-                 </li>
-             </ul>
+                Ramamurthy Nagar,<br />
+                Bangalore – 560016
+              </p>
+            </div>
+
+            <div className="location-item">
+              <div className="location-header">
+                <FaMapMarkerAlt className="location-icon" />
+                <strong>Koramangala</strong>
+              </div>
+              <p>
+                #204, 9th Main, 14th Cross,<br />
+                Rajendranagar, Vivek Nagar,<br />
+                Bangalore – 560047
+              </p>
+            </div>
+          </div>
         </div>
+
 
         {/* Right - Legal */}
         <div className="footer-legal">

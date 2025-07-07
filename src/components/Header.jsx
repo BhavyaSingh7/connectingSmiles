@@ -19,7 +19,7 @@ const Header = () => {
 
         <Navbar.Collapse id="main-navbar" className="justify-content-end">
           <Nav className="text-uppercase fw-semibold">
-            <Nav.Link className="px-3">About</Nav.Link>
+            <Nav.Link href="#about" className="px-3">About</Nav.Link>
             <Nav.Link href="#locations" className="px-3">Locations</Nav.Link>
             <Nav.Link href="#contact" className="px-3">Contact</Nav.Link>
           </Nav>
