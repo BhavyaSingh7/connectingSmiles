@@ -2,6 +2,26 @@
   margin-top: 4%;
 }
 
+/* Ensure Bootstrap grid works properly */
+.initiative-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.initiative-container .col-md-4 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+/* Medium screens and up */
+@media (min-width: 768px) {
+  .initiative-container .col-md-4 {
+    width: 33.33333333%;
+  }
+}
+
 .initiative-card {
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
