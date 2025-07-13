@@ -6,17 +6,17 @@ const initiativesData = [
   {
     title: "Pehel",
     description: "Pehel, a flagship prgram of Connecting Smiles Foundation (CSF), empowers women.",
-    image: "/connectingSmiles/cs-1.jpeg"
+    image: "/cs-1.jpeg"
   },
   {
     title: "Neev",
     description: "Neev empowers small orphanages through nutrition, education, and a path to sustainability.",
-    image: "/connectingSmiles/cs-2b.jpeg"
+    image: "/cs-2b.jpeg"
   },
   {
     title: "Each One Feed One",
     description: "Each One Feed One is our initiative to ensure no one goes hungry by providing meals to those in need.",
-    image: "/connectingSmiles/cs-3c.jpeg"
+    image: "/cs-3c.jpeg"
   }
 ];
 
@@ -24,10 +24,10 @@ const Initiatives = () => {
   return (
     <Container className="py-5 initiative-container">
       <h2 className="mb-4 fw-bold">INITIATIVES</h2>
-      <Row>
+      <Row className="g-4">
         {initiativesData.map((item, idx) => (
-          <Col md={4} sm={12} className="mb-4" key={idx}>
-            <Card className="border-0 initiative-card">
+          <Col xl={4} lg={4} md={6} sm={12} className="d-flex" key={idx}>
+            <Card className="border-0 initiative-card w-100">
               <Card.Img variant="top" src={item.image} className="initiative-img" />
               <Card.Body>
                 <Card.Title className="fw-semibold">{item.title}</Card.Title>
