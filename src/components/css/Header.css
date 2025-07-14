@@ -110,6 +110,78 @@ button.btn-dark {
   margin-top:15px;
 }
 
+/* Active Navigation Link Styling - Default (Home and About) */
+.nav-link-active {
+  color: #FFBF00 !important; /* Yellow for Home and About */
+  font-weight: 700 !important;
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background-color: #FFBF00; /* Yellow underline for Home and About */
+  border-radius: 2px;
+}
+
+.nav-link-active:hover {
+  color: #FFBF00 !important;
+  transform: translateY(-1px);
+}
+
+/* Active Navigation Link Styling - Locations (Green) */
+.nav-link-active-locations {
+  color: #4CAF50 !important; /* Green for Locations */
+  font-weight: 700 !important;
+  position: relative;
+}
+
+.nav-link-active-locations::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background-color: #4CAF50; /* Green underline for Locations */
+  border-radius: 2px;
+}
+
+.nav-link-active-locations:hover {
+  color: #4CAF50 !important;
+  transform: translateY(-1px);
+}
+
+/* Active Navigation Link Styling - Contact (Red) */
+.nav-link-active-contact {
+  color: #D62828 !important; /* Red for Contact */
+  font-weight: 700 !important;
+  position: relative;
+}
+
+.nav-link-active-contact::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background-color: #D62828; /* Red underline for Contact */
+  border-radius: 2px;
+}
+
+.nav-link-active-contact:hover {
+  color: #D62828 !important;
+  transform: translateY(-1px);
+}
+
 
 
 
