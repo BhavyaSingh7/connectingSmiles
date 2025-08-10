@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />       {/* Home page */}
+        <Route path="/connectingSmiles" element={<Home />} />       {/* Home page */}
         <Route path="/about" element={<About />} /> {/* About page */}
         <Route path="/donateNow" element={<DanaMojo />}  /> {/* donation page */}
         <Route path="/contactus" element={<ContactPage />} /> {/* contact page */}
