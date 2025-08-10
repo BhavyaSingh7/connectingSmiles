@@ -34,7 +34,7 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="hero-content">
@@ -53,7 +53,7 @@ const ContactPage = () => {
               <p className="contact-subtitle">
                 Get in touch with us through any of these channels. We're here to help!
               </p>
-              
+
               <div className="contact-details">
                 <div className="contact-item">
                   <div className="contact-icon">
@@ -232,4 +232,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage; 
+export default ContactPage;

@@ -468,3 +468,24 @@ html {
   outline: 3px solid var(--accent-yellow);
   outline-offset: 2px;
 }
+
+/* AOS animations smoothness fix */
+[data-aos] {
+  transition-timing-function: ease-in-out !important;
+}
+
+.value-card,
+.team-card,
+.highlight {
+  will-change: transform, opacity;
+}
+
+.hero-section,
+.mission-section,
+.story-section,
+.values-section,
+.team-section,
+.impact-section,
+.about-cta {
+  will-change: transform, opacity;
+}

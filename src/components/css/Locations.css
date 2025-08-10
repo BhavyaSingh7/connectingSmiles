@@ -472,4 +472,31 @@ html {
   font-size: 1em !important;
   margin-right: 0.3rem !important;
   display: inline !important;
-} 
+}
+
+/* ------------------------------
+   Minimal scroll animations
+   subtle, quick, and performant
+   ------------------------------ */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 420ms cubic-bezier(.22,.9,.36,1), transform 420ms cubic-bezier(.22,.9,.36,1);
+  will-change: opacity, transform;
+  /* transition-delay can be set inline (see JSX style={{ transitionDelay: '...' }}) */
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* small visual polish: subtle scale on service icons when in-view */
+.service-item.animate-on-scroll .service-icon {
+  display: inline-block;
+  transition: transform 420ms cubic-bezier(.22,.9,.36,1);
+}
+
+.service-item.animate-on-scroll.in-view .service-icon {
+  transform: scale(1.05);
+}

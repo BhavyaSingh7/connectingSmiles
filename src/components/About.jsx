@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./css/About.css";
 
 const team = [
-  { 
-    name: "Jane Doe", 
+  {
+    name: "Jane Doe",
     role: "Founder & CEO",
     bio: "With over 15 years of experience in social work, Jane leads our mission to transform communities through education and healthcare."
   },
-  { 
-    name: "John Smith", 
-    role: "Program Director",
-    bio: "John oversees our educational programs and community outreach initiatives, bringing innovative solutions to complex social challenges."
-  },
-  { 
-    name: "Emily Lee", 
-    role: "Education Lead",
+  {
+    name: "Emily Lee",
+    role: "Founder & CEO",
     bio: "Emily develops and implements our educational curricula, ensuring quality learning experiences for all beneficiaries."
   },
 ];
@@ -48,6 +45,10 @@ const values = [
 const About = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, easing: "ease-out-cubic" });
+  }, []);
+
   const handleDonate = () => {
     navigate("/donateNow");
   };
@@ -59,126 +60,136 @@ const About = () => {
   return (
     <div className="about-page">
       <Header />
-    
-    {/* Hero Section */}
-    <section className="hero-section">
-      <div className="hero-content">
-        <h1>About Connecting Smiles</h1>
-        <p>
-          At Connecting Smiles Foundation, we empower lives through education, healthcare,
-          and community-driven programs. We believe in smiles that build futures and create
-          lasting positive change in underserved communities.
-        </p>
-        <div className="hero-stats">
-          <div className="stat-item">
-            <h3>10,000+</h3>
-            <p>Lives Impacted</p>
-          </div>
-          <div className="stat-item">
-            <h3>50+</h3>
-            <p>Communities Served</p>
-          </div>
-          <div className="stat-item">
-            <h3>15+</h3>
-            <p>Years of Service</p>
+
+      {/* Hero Section */}
+      <section className="hero-section" data-aos="fade-up">
+        <div className="hero-content" data-aos="fade-down">
+          <h1>About Connecting Smiles</h1>
+          <p>
+            At Connecting Smiles Foundation, we empower lives through education, healthcare, hunger relief, and community-driven programs.
+            Since 2021, we’ve been creating lasting positive change in underserved communities—connecting smiles that build brighter futures.
+          </p>
+          <div className="hero-stats">
+            <div className="stat-item" data-aos="zoom-in" data-aos-delay="100">
+              <h3>10,000+</h3>
+              <p>Lives Impacted</p>
+            </div>
+            <div className="stat-item" data-aos="zoom-in" data-aos-delay="200">
+              <h3>50+</h3>
+              <p>Communities Served</p>
+            </div>
+            <div className="stat-item" data-aos="zoom-in" data-aos-delay="300">
+              <h3>15+</h3>
+              <p>Years of Service</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Mission & Vision */}
-    <section className="mission-section">
-      <div className="container">
-        <div className="mission-content">
-          <div className="text-block">
+      {/* Mission & Vision */}
+      <section className="mission-section">
+        <div className="container mission-content">
+          <div className="text-block" data-aos="fade-right">
             <h2>Our Mission</h2>
             <p>
-              Our mission is to uplift underprivileged communities – especially women and children –
-              through access to quality education, skill development training, and essential health services.
+              Our mission is to uplift underprivileged communities—especially women and children—through access to quality education, skill development training, and essential health services.
+              We address immediate needs like hunger while creating long-term opportunities for growth.
+              By fostering self-reliance, we help individuals and families break the cycle of poverty.
               We strive to create sustainable pathways to prosperity and well-being.
             </p>
           </div>
-          <div className="text-block">
+          <div className="text-block" data-aos="fade-left">
             <h2>Our Vision</h2>
             <p>
-              We envision a world where every person, regardless of their background or circumstances,
-              has access to the resources and opportunities they need to thrive. A world where education
-              is universal, healthcare is accessible, and communities are empowered to drive their own development.
+              We envision a world where every person, regardless of background or circumstance, has the resources and opportunities they need to thrive.
+              A future where education is universal and healthcare is accessible to all.
+              Where communities are empowered to drive their own development.
+              Where every smile tells a story of hope, dignity, and possibility.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Our Story */}
-    <section className="story-section">
-      <div className="container">
-        <div className="story-content">
-          <div className="text-block">
+      {/* Our Story */}
+      <section className="story-section">
+        <div className="container story-content">
+          <div className="text-block" data-aos="fade-up">
             <h2>Our Story</h2>
             <p>
-              Founded in 2009, Connecting Smiles began as a small initiative to provide educational
-              support to children in rural communities. What started as a modest effort to brighten
-              a few smiles has grown into a comprehensive foundation touching thousands of lives.
+              Connecting Smiles Foundation was founded in 2021 with a simple belief—that hunger, lack of education, and limited access to healthcare should never define a person’s future.
+              It began with small food drives, feeding those in need during times of crisis.
+              But we soon realized that true change requires more than charity—it requires empowerment.
+              So we expanded into education programs, skill development workshops, and healthcare initiatives.
+              Our work began focusing on women and children, creating opportunities for them to lead self-reliant lives.
+              Every initiative we take is aligned with the UN Sustainable Development Goals, ensuring lasting global impact.
             </p>
             <p>
-              Over the years, we've expanded our reach to include healthcare services, women's
-              empowerment programs, and sustainable development initiatives. Each program is designed
-              with the community's unique needs in mind, ensuring our impact is both meaningful and lasting.
+              We partner closely with local communities, listening to their needs and building solutions together.
+              From classrooms to clinics, from kitchens to skill labs—we are there, connecting hope with action.
+              We believe dignity is as important as development.
+              And every day, we keep connecting more smiles, one life at a time.
             </p>
           </div>
-          <div className="img-block">
+          <div className="img-block" data-aos="zoom-in">
             <img src="/cs-1.jpeg" alt="Our journey" />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Our Values */}
-    <section className="values-section">
-      <div className="container">
-        <h2>Our Core Values</h2>
-        <div className="values-grid">
-          {values.map((value, index) => (
-            <div key={index} className="value-card">
-              <div className="value-icon">{value.icon}</div>
-              <h3>{value.title}</h3>
-              <p>{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Team Section */}
-    <section className="team-section">
-      <div className="container">
-        <h2>Meet Our Team</h2>
-        <p className="team-intro">
-          Our dedicated team of professionals and volunteers work tirelessly to make our mission a reality.
-        </p>
-        <div className="team-grid">
-          {team.map((member, index) => (
-            <div key={index} className="team-card">
-              <div className="team-avatar">
-                <img src={`/cs-${index + 1}.jpeg`} alt={member.name} />
+      {/* Our Values */}
+      <section className="values-section" data-aos="fade-up">
+        <div className="container">
+          <h2>Our Core Values</h2>
+          <div className="values-grid">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className="value-card"
+                data-aos="flip-left"
+                data-aos-delay={index * 100}
+              >
+                <div className="value-icon">{value.icon}</div>
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
               </div>
-              <div className="team-info">
-                <h3>{member.name}</h3>
-                <p className="role">{member.role}</p>
-                <p className="bio">{member.bio}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Impact Section */}
-    <section className="impact-section">
-      <div className="container">
-        <div className="impact-content">
-          <div className="text-block">
+      {/* Team Section */}
+      <section className="team-section" data-aos="fade-up">
+        <div className="container">
+          <h2>Meet Our Team</h2>
+          <p className="team-intro">
+            Our dedicated team of professionals and volunteers work tirelessly to make our mission a reality.
+          </p>
+          <div className="team-grid">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="team-card"
+                data-aos="zoom-in"
+                data-aos-delay={index * 150}
+              >
+                <div className="team-avatar">
+                  <img src={`/cs-${index + 1}.jpeg`} alt={member.name} />
+                </div>
+                <div className="team-info">
+                  <h3>{member.name}</h3>
+                  <p className="role">{member.role}</p>
+                  <p className="bio">{member.bio}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section className="impact-section" data-aos="fade-right">
+        <div className="container impact-content">
+          <div className="text-block" data-aos="fade-up">
             <h2>Our Impact</h2>
             <p>
               Through our various programs, we've been able to create meaningful change in the lives
@@ -187,44 +198,47 @@ const About = () => {
               our impact extends far beyond numbers.
             </p>
             <div className="impact-highlights">
-              <div className="highlight">
+              <div className="highlight" data-aos="fade-right" data-aos-delay="100">
                 <h4>Education Programs</h4>
                 <p>5,000+ children provided with quality education and learning materials</p>
               </div>
-              <div className="highlight">
+              <div className="highlight" data-aos="fade-right" data-aos-delay="200">
                 <h4>Healthcare Services</h4>
                 <p>3,000+ individuals received essential healthcare services and wellness programs</p>
               </div>
-              <div className="highlight">
+              <div className="highlight" data-aos="fade-right" data-aos-delay="300">
                 <h4>Women's Empowerment</h4>
                 <p>1,500+ women trained in vocational skills and entrepreneurship</p>
               </div>
             </div>
           </div>
-          <div className="img-block">
+          <div className="img-block" data-aos="zoom-in">
             <img src="/cs-2a.jpeg" alt="Our impact" />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Call to Action */}
-    <section className="about-cta">
-      <div className="container">
-        <h2>Join Our Mission</h2>
-        <p>
-          Together, we can create a world where every smile tells a story of hope, opportunity, and transformation.
-          Your support helps us continue our work and expand our reach to even more communities in need.
-        </p>
-        <div className="cta-buttons">
-          <button className="cta-btn primary" onClick={handleDonate}>Donate Now</button>
-          <button className="cta-btn secondary" onClick={handleVolunteer}>Volunteer With Us</button>
+      {/* Call to Action */}
+      <section className="about-cta" data-aos="fade-up">
+        <div className="container">
+          <h2>Join Our Mission</h2>
+          <p>
+            Together, we can create a world where every smile tells a story of hope, opportunity, and transformation.
+            Your support helps us continue our work and expand our reach to even more communities in need.
+          </p>
+          <div className="cta-buttons">
+            <button className="cta-btn primary" onClick={handleDonate} data-aos="zoom-in">
+              Donate Now
+            </button>
+            <button className="cta-btn secondary" onClick={handleVolunteer} data-aos="zoom-in" data-aos-delay="100">
+              Volunteer With Us
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <Footer />
-  </div>
+      <Footer />
+    </div>
   );
 };
 
