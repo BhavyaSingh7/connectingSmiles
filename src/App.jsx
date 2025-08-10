@@ -9,9 +9,9 @@ import Locations from "./components/Locations";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/connectingSmiles">
       <Routes>
-        <Route path="/connectingSmiles" element={<Home />} />       {/* Home page */}
+        <Route path="/" element={<Home />} />       {/* Home page */}
         <Route path="/about" element={<About />} /> {/* About page */}
         <Route path="/donateNow" element={<DanaMojo />}  /> {/* donation page */}
         <Route path="/contactus" element={<ContactPage />} /> {/* contact page */}
