@@ -8,7 +8,7 @@ import Footer from "./Footer";
 function Home() {
   return (
     <>
-     <Header />
+      <Header />
       <main>
         <DonateSection />
         <Initiatives />

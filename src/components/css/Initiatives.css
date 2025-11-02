@@ -1,5 +1,36 @@
 .initiative-container {
-  margin-top: 4%;
+  margin-top: -100px;
+  padding-top: 140px;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, transparent 0%, transparent 15%, #f8f9fa 25%, #ffffff 100%);
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Title Styling */
+.initiative-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.initiative-section-subtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.initiative-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFBF00 0%, #FFD700 100%);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
 }
 
 /* Ensure Bootstrap grid works properly */
@@ -22,37 +53,303 @@
   }
 }
 
+/* Card Styling */
 .initiative-card {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   background-color: #fff;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .initiative-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+}
+
+/* Image Container */
+.initiative-img-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .initiative-img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
+.initiative-card:hover .initiative-img {
+  transform: scale(1.1);
+}
+
+/* Image Overlay */
+.initiative-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.initiative-card:hover .initiative-img-overlay {
+  opacity: 0.8;
+}
+
+/* Icon Wrapper */
+.initiative-icon-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.initiative-card:hover .initiative-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Body */
 .initiative-card .card-body {
-  padding: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.initiative-card .card-title {
-  font-weight: 600;
-  font-size: 1.1rem;
+.initiative-card-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
-.initiative-card .card-text {
-  color: #6c757d;
+.initiative-card-subtitle {
   font-size: 0.95rem;
+  color: #FFBF00;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.initiative-card-text {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Learn More Button */
+.initiative-learn-more-btn {
+  border: 2px solid #FFBF00;
+  color: #FFBF00;
+  background: transparent;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.initiative-learn-more-btn:hover {
+  background: #FFBF00;
+  color: #fff;
+  border-color: #FFBF00;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(255, 191, 0, 0.3);
+}
+
+.initiative-learn-more-btn:active {
+  transform: translateX(2px);
+}
+
+.initiative-learn-more-btn:focus {
+  box-shadow: 0 0 0 3px rgba(255, 191, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .initiative-section-title {
+    font-size: 2.2rem;
+  }
+  
+  .initiative-img-container {
+    height: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .initiative-container {
+    padding: 3rem 0;
+    margin-top: 2%;
+  }
+
+  .initiative-section-title {
+    font-size: 2rem;
+  }
+
+  .initiative-section-subtitle {
+    font-size: 1rem;
+  }
+
+  .initiative-img-container {
+    height: 220px;
+  }
+
+  .initiative-card-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .initiative-container {
+    padding: 2.5rem 0;
+  }
+
+  .initiative-section-title {
+    font-size: 1.8rem;
+  }
+
+  .initiative-section-subtitle {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .initiative-img-container {
+    height: 200px;
+  }
+
+  .initiative-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .initiative-card .card-body {
+    padding: 20px;
+  }
+
+  .initiative-card-title {
+    font-size: 1.2rem;
+  }
+
+  .initiative-card-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .initiative-container {
+    padding: 2rem 0;
+  }
+
+  .initiative-section-title {
+    font-size: 1.6rem;
+  }
+
+  .initiative-img-container {
+    height: 180px;
+  }
+
+  .initiative-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .initiative-card .card-body {
+    padding: 18px;
+  }
+
+  .initiative-card-title {
+    font-size: 1.1rem;
+  }
+
+  .initiative-card-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .initiative-card-text {
+    font-size: 0.9rem;
+  }
+
+  .initiative-learn-more-btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .initiative-card,
+  .initiative-img,
+  .initiative-img-overlay,
+  .initiative-icon-wrapper,
+  .initiative-learn-more-btn {
+    transition: none;
+  }
+  
+  .initiative-card:hover .initiative-img {
+    transform: none;
+  }
+  
+  .initiative-card:hover .initiative-icon-wrapper {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .initiative-container {
+    background: #fff;
+    padding: 1rem 0;
+  }
+
+  .initiative-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+
+  .initiative-img-overlay,
+  .initiative-icon-wrapper {
+    display: none;
+  }
 }

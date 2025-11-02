@@ -1,60 +1,71 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Heart, Zap, Users, Lightbulb, Target, Eye, TrendingUp, Award } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./css/About.css";
-
-const team = [
-  {
-    name: "Jane Doe",
-    role: "Founder & CEO",
-    bio: "With over 15 years of experience in social work, Jane leads our mission to transform communities through education and healthcare."
-  },
-  {
-    name: "Emily Lee",
-    role: "Founder & CEO",
-    bio: "Emily develops and implements our educational curricula, ensuring quality learning experiences for all beneficiaries."
-  },
-];
 
 const values = [
   {
     title: "Compassion",
-    description: "We approach every interaction with empathy and understanding, recognizing the dignity and worth of every individual.",
-    icon: "💝"
+    description: "Empathy and understanding drive every interaction, recognizing the dignity of every individual.",
+    icon: Heart,
+    color: "#FF6B6B"
   },
   {
     title: "Empowerment",
-    description: "We believe in equipping people with the tools, knowledge, and confidence to create positive change in their own lives.",
-    icon: "⚡"
+    description: "Equipping people with tools, knowledge, and confidence to create positive change.",
+    icon: Zap,
+    color: "#FFBF00"
   },
   {
     title: "Community",
-    description: "We work hand-in-hand with local communities, fostering collaboration and sustainable development.",
-    icon: "🤝"
+    description: "Working hand-in-hand with local communities for sustainable development.",
+    icon: Users,
+    color: "#4ECDC4"
   },
   {
     title: "Innovation",
-    description: "We embrace creative solutions and modern approaches to address traditional challenges in new ways.",
-    icon: "💡"
+    description: "Embracing creative solutions and modern approaches to address challenges.",
+    icon: Lightbulb,
+    color: "#95E1D3"
   }
+];
+
+const impactStats = [
+  { number: "10,000+", label: "Lives Impacted", icon: Users },
+  { number: "5,000+", label: "Children Educated", icon: Award },
+  { number: "1,500+", label: "Women Empowered", icon: TrendingUp },
+  { number: "50+", label: "Communities Served", icon: Target }
 ];
 
 const About = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true, easing: "ease-out-cubic" });
-  }, []);
-
   const handleDonate = () => {
-    navigate("/donateNow");
+    window.open("https://connecting-smiles-foundation.danamojo.org/", "_blank", "noopener,noreferrer");
   };
 
   const handleVolunteer = () => {
     navigate("/contactus");
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+    }
   };
 
   return (
@@ -62,180 +73,206 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="hero-section" data-aos="fade-up">
-        <div className="hero-content" data-aos="fade-down">
+      <motion.section
+        className="hero-section"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.div
+          className="hero-content"
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <h1>About Connecting Smiles</h1>
           <p>
-            At Connecting Smiles Foundation, we empower lives through education, healthcare, hunger relief, and community-driven programs.
-            Since 2021, we’ve been creating lasting positive change in underserved communities—connecting smiles that build brighter futures.
+            Connecting Smiles Foundation is an India-based non-profit working towards zero hunger and sustainable 
+            employability. We align with UN Sustainable Development Goals to improve the lives of vulnerable and 
+            economically disadvantaged communities through education, healthcare, and empowerment.
           </p>
-          <div className="hero-stats">
-            <div className="stat-item" data-aos="zoom-in" data-aos-delay="100">
-              <h3>10,000+</h3>
-              <p>Lives Impacted</p>
+        </motion.div>
+      </motion.section>
+
+      {/* Impact Stats */}
+      <section className="impact-stats-section">
+        <div className="container">
+          <motion.div
+            className="impact-stats-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {impactStats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="impact-stat-card"
+                  variants={itemVariants}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="stat-icon">
+                    <IconComponent size={32} color="#FFBF00" />
             </div>
-            <div className="stat-item" data-aos="zoom-in" data-aos-delay="200">
-              <h3>50+</h3>
-              <p>Communities Served</p>
-            </div>
-            <div className="stat-item" data-aos="zoom-in" data-aos-delay="300">
-              <h3>15+</h3>
-              <p>Years of Service</p>
-            </div>
-          </div>
+                  <h3>{stat.number}</h3>
+                  <p>{stat.label}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="mission-section">
-        <div className="container mission-content">
-          <div className="text-block" data-aos="fade-right">
+      {/* Mission & Vision Combined */}
+      <section className="mission-vision-section">
+        <div className="container">
+          <motion.div
+            className="mission-vision-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div className="mission-block" variants={itemVariants}>
+              <div className="block-icon">
+                <Target size={40} color="#FFBF00" />
+              </div>
             <h2>Our Mission</h2>
             <p>
-              Our mission is to uplift underprivileged communities—especially women and children—through access to quality education, skill development training, and essential health services.
-              We address immediate needs like hunger while creating long-term opportunities for growth.
-              By fostering self-reliance, we help individuals and families break the cycle of poverty.
-              We strive to create sustainable pathways to prosperity and well-being.
-            </p>
+                To uplift underprivileged communities—especially women and children—through quality education, 
+                skill development, and essential healthcare. We address immediate needs while creating sustainable 
+                pathways to break the cycle of poverty.
+              </p>
+            </motion.div>
+            <motion.div className="vision-block" variants={itemVariants}>
+              <div className="block-icon">
+                <Eye size={40} color="#FFBF00" />
           </div>
-          <div className="text-block" data-aos="fade-left">
             <h2>Our Vision</h2>
             <p>
-              We envision a world where every person, regardless of background or circumstance, has the resources and opportunities they need to thrive.
-              A future where education is universal and healthcare is accessible to all.
-              Where communities are empowered to drive their own development.
-              Where every smile tells a story of hope, dignity, and possibility.
-            </p>
-          </div>
+                A world where every person has access to education, healthcare, and opportunities to thrive. 
+                We envision empowered communities driving their own development, where every smile tells a story 
+                of hope, dignity, and possibility.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Our Story - Condensed */}
       <section className="story-section">
-        <div className="container story-content">
-          <div className="text-block" data-aos="fade-up">
+        <div className="container">
+          <motion.div
+            className="story-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="story-text">
             <h2>Our Story</h2>
             <p>
-              Connecting Smiles Foundation was founded in 2021 with a simple belief—that hunger, lack of education, and limited access to healthcare should never define a person’s future.
-              It began with small food drives, feeding those in need during times of crisis.
-              But we soon realized that true change requires more than charity—it requires empowerment.
-              So we expanded into education programs, skill development workshops, and healthcare initiatives.
-              Our work began focusing on women and children, creating opportunities for them to lead self-reliant lives.
-              Every initiative we take is aligned with the UN Sustainable Development Goals, ensuring lasting global impact.
-            </p>
-            <p>
-              We partner closely with local communities, listening to their needs and building solutions together.
-              From classrooms to clinics, from kitchens to skill labs—we are there, connecting hope with action.
-              We believe dignity is as important as development.
-              And every day, we keep connecting more smiles, one life at a time.
+                Founded in 2021, Connecting Smiles began with food drives to address hunger during crises. 
+                We quickly realized that true change requires empowerment, not just charity. Today, we've expanded 
+                into education programs, skill development workshops, and healthcare initiatives focused on women 
+                and children. Partnering closely with local communities, we build solutions together—from 
+                classrooms to clinics, connecting hope with action, one life at a time.
             </p>
           </div>
-          <div className="img-block" data-aos="zoom-in">
-            <img src="/cs-1.jpeg" alt="Our journey" />
-          </div>
+            <motion.div
+              className="story-image"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img 
+                src={`${import.meta.env.BASE_URL}cs-1.jpeg`} 
+                alt="Connecting Smiles Foundation team working together on community projects" 
+                loading="lazy"
+                decoding="async"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="values-section" data-aos="fade-up">
+      {/* Values Section */}
+      <section className="values-section">
         <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="section-header"
+          >
           <h2>Our Core Values</h2>
-          <div className="values-grid">
-            {values.map((value, index) => (
-              <div
+            <p>Principles that guide everything we do</p>
+          </motion.div>
+          <motion.div
+            className="values-grid"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <motion.div
                 key={index}
                 className="value-card"
-                data-aos="flip-left"
-                data-aos-delay={index * 100}
+                  variants={itemVariants}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="value-icon">{value.icon}</div>
+                  <div className="value-icon" style={{ backgroundColor: `${value.color}15` }}>
+                    <IconComponent size={32} color={value.color} />
+                  </div>
                 <h3>{value.title}</h3>
                 <p>{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="team-section" data-aos="fade-up">
-        <div className="container">
-          <h2>Meet Our Team</h2>
-          <p className="team-intro">
-            Our dedicated team of professionals and volunteers work tirelessly to make our mission a reality.
-          </p>
-          <div className="team-grid">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="team-card"
-                data-aos="zoom-in"
-                data-aos-delay={index * 150}
-              >
-                <div className="team-avatar">
-                  <img src={`/cs-${index + 1}.jpeg`} alt={member.name} />
-                </div>
-                <div className="team-info">
-                  <h3>{member.name}</h3>
-                  <p className="role">{member.role}</p>
-                  <p className="bio">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Section */}
-      <section className="impact-section" data-aos="fade-right">
-        <div className="container impact-content">
-          <div className="text-block" data-aos="fade-up">
-            <h2>Our Impact</h2>
-            <p>
-              Through our various programs, we've been able to create meaningful change in the lives
-              of thousands of individuals and families. From providing quality education to children
-              who might otherwise go without, to offering healthcare services in underserved areas,
-              our impact extends far beyond numbers.
-            </p>
-            <div className="impact-highlights">
-              <div className="highlight" data-aos="fade-right" data-aos-delay="100">
-                <h4>Education Programs</h4>
-                <p>5,000+ children provided with quality education and learning materials</p>
-              </div>
-              <div className="highlight" data-aos="fade-right" data-aos-delay="200">
-                <h4>Healthcare Services</h4>
-                <p>3,000+ individuals received essential healthcare services and wellness programs</p>
-              </div>
-              <div className="highlight" data-aos="fade-right" data-aos-delay="300">
-                <h4>Women's Empowerment</h4>
-                <p>1,500+ women trained in vocational skills and entrepreneurship</p>
-              </div>
-            </div>
-          </div>
-          <div className="img-block" data-aos="zoom-in">
-            <img src="/cs-2a.jpeg" alt="Our impact" />
-          </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="about-cta" data-aos="fade-up">
+      <motion.section
+        className="about-cta"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="container">
           <h2>Join Our Mission</h2>
           <p>
-            Together, we can create a world where every smile tells a story of hope, opportunity, and transformation.
-            Your support helps us continue our work and expand our reach to even more communities in need.
+            Together, we can create transformative change. Your support helps us expand our reach and 
+            impact more communities in need.
           </p>
           <div className="cta-buttons">
-            <button className="cta-btn primary" onClick={handleDonate} data-aos="zoom-in">
+            <motion.button
+              className="cta-btn primary"
+              onClick={handleDonate}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Donate Now
-            </button>
-            <button className="cta-btn secondary" onClick={handleVolunteer} data-aos="zoom-in" data-aos-delay="100">
+            </motion.button>
+            <motion.button
+              className="cta-btn secondary"
+              onClick={handleVolunteer}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Volunteer With Us
-            </button>
+            </motion.button>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>

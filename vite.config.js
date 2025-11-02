@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/connectingSmiles/',
+  server: {
+    port: 3001,
+    strictPort: false // Allows Vite to use next available port if 3001 is taken
+  }
 })
