@@ -181,8 +181,16 @@
 
 /* Performance Optimizations */
 .home-section {
-  will-change: transform;
+  will-change: scroll-position;
   transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout style paint;
+}
+
+main {
+  transform: translateZ(0);
+  will-change: scroll-position;
+  contain: layout style paint;
 }
 
 /* Accessibility */

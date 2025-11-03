@@ -73,13 +73,14 @@ const ContactUs = () => {
   ];
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.4,
+        ease: [0.22, 1, 0.36, 1],
+        type: "tween"
       }
     }
   };
@@ -104,7 +105,7 @@ const ContactUs = () => {
                   key={idx}
                   className="contact-info-item"
                   whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: "tween", duration: 0.2, ease: "easeOut" }}
                 >
                   <div className="contact-info-icon" aria-hidden="true">
                     <IconComponent size={20} />

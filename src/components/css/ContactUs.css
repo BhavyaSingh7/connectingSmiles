@@ -5,6 +5,9 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
+  will-change: scroll-position;
+  contain: layout style paint;
 }
 
 .contact-wrapper::before {
@@ -31,6 +34,8 @@
   gap: 50px;
   flex-wrap: wrap;
   z-index: 1;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Contact Card Styles */
@@ -74,7 +79,9 @@
   gap: 15px;
   padding: 12px;
   border-radius: 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .contact-info-item:hover {

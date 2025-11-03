@@ -48,16 +48,15 @@ const Initiatives = () => {
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      y: 50,
-      scale: 0.9
+      y: 30
     },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.4,
+        ease: [0.22, 1, 0.36, 1],
+        type: "tween"
       }
     }
   };
@@ -102,7 +101,7 @@ const Initiatives = () => {
                   variants={cardVariants}
                   className="w-100"
                   whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  transition={{ type: "tween", duration: 0.2, ease: "easeOut" }}
                 >
                   <Card className="border-0 initiative-card w-100 h-100">
                     <div className="initiative-img-container">

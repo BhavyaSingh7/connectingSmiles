@@ -9,18 +9,26 @@ body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
+  will-change: scroll-position;
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .donate-carousel .carousel-inner {
   position: relative;
   width: 100%;
   height: 100%;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .donate-carousel .carousel-item {
   width: 100%;
   height: 100%;
   position: relative;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Carousel Image Styles */
@@ -34,6 +42,10 @@ body {
   will-change: transform;
   min-width: 100%;
   min-height: 100%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 /* Responsive Image Heights */
@@ -45,6 +57,10 @@ body {
   overflow: hidden;
   position: relative;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  transform: translateZ(0);
+  will-change: scroll-position;
+  backface-visibility: hidden;
+  contain: layout style paint;
 }
 
 .carousel-image-wrapper .carousel {
@@ -76,6 +92,9 @@ body {
   display: block;
   min-width: 100%;
   min-height: 100%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 /* Tablet and below */
@@ -149,7 +168,7 @@ body {
   bottom: 10% !important;
   left: 50% !important;
   right: auto !important;
-  transform: translateX(-50%) !important;
+  transform: translateX(-50%) translateZ(0) !important;
   z-index: 2;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
@@ -158,6 +177,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .carousel-caption-custom > div {
